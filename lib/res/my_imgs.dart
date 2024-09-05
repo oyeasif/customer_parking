@@ -37,6 +37,9 @@ class MyImgs  {
   static String meter = 'assets/icons/home/meter.svg';
   static String timeAway = 'assets/icons/home/timeAway.svg';
   static String availableSpots = 'assets/icons/home/availableSpots.svg';
+  static String phone = 'assets/icons/home/phone.svg';
+  static String chat = 'assets/icons/home/chat.svg';
+  static String easypaisa = 'assets/icons/home/easypaisa.png';
 
   /// Assets Images
   static String personProfile = 'assets/images/profile.jpg';

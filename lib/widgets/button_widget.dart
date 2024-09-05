@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../res/color.dart';
+
 class ButtonWidget extends StatelessWidget {
   final String title;
   final VoidCallback onPress;
@@ -31,6 +33,12 @@ class ButtonWidget extends StatelessWidget {
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.r),
+            boxShadow: [
+              BoxShadow(
+                color: MyColors.grey20,
+                blurRadius: 5.r,
+              ),
+            ],
           ),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(

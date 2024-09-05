@@ -1,8 +1,77 @@
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:image_picker/image_picker.dart';
 
 class HomeController extends GetxController {
+
+
+  XFile? vehicleImage;
+  final imagePicker = ImagePicker();
+
+  Rx<TextEditingController> vehicleNameController = TextEditingController().obs;
+  Rx<TextEditingController> vehicleTypeController = TextEditingController().obs;
+  Rx<TextEditingController> vehicleNumberController = TextEditingController().obs;
+
+  Future vehicleImageBottomSheet(BuildContext context) async {
+
+    Future getLogoCameraImage() async {
+      final pickedFile = await imagePicker.pickImage(source: ImageSource.camera, requestFullMetadata: true,);
+
+      if (pickedFile != null) {
+        vehicleImage = pickedFile;
+        update();
+      }
+
+      else {
+        print('No Image Selected');
+      }
+      update();
+    }
+
+    Future getLogoGalleryImage() async {
+      final pickedFile = await imagePicker.pickImage(source: ImageSource.gallery, requestFullMetadata: true);
+      if (pickedFile != null) {
+        vehicleImage = pickedFile;
+        update();
+      }
+
+      else {
+        print('No Image Selected');
+      }
+      update();
+    }
+
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.add_a_photo),
+              title: const Text('Camera'),
+              onTap: () {
+                getLogoCameraImage();
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.image),
+              title: Text('Gallery'),
+              onTap: () {
+                getLogoGalleryImage();
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 
   BitmapDescriptor? userLocation;
 

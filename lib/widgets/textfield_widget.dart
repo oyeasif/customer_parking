@@ -16,6 +16,7 @@ class TextfieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       style: GoogleFonts.inter(
         fontSize: 16.sp,
         fontWeight: FontWeight.w500,
@@ -25,7 +26,8 @@ class TextfieldWidget extends StatelessWidget {
       decoration: InputDecoration(
           hintText: hintText,
           hintStyle: GoogleFonts.inter(
-            fontWeight: FontWeight.w600,
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w500,
             color: Colors.grey
           ),
           filled: true,
