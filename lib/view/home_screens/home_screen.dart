@@ -4,10 +4,12 @@ import 'package:customer_parking_app/res/color.dart';
 import 'package:customer_parking_app/res/my_imgs.dart';
 import 'package:customer_parking_app/view/home_screens/park_detail_screen.dart';
 import 'package:customer_parking_app/widgets/text_widget.dart';
+import 'package:customer_parking_app/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,8 +21,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+  bool parkDetail = true;
   final homeController = Get.find<HomeController>();
-
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +38,18 @@ class _HomeScreenState extends State<HomeScreen> {
             tiltGesturesEnabled: true,
             markers: {
               Marker(
-                markerId: MarkerId(MyImgs.carLocation,),
-                icon: homeController.userLocation == null ? BitmapDescriptor.defaultMarker : homeController.userLocation!,
+                markerId: MarkerId(
+                  MyImgs.carLocation,
+                ),
+                icon: homeController.userLocation == null
+                    ? BitmapDescriptor.defaultMarker
+                    : homeController.userLocation!,
                 position: const LatLng(34.013195, 71.500863),
               ),
             },
             // onMapCreated: _onMapCreated,
             initialCameraPosition: const CameraPosition(
-              target: LatLng(34.004540,71.503617),
+              target: LatLng(34.004540, 71.503617),
               zoom: 14.0,
             ),
             // markers: _createParkingMarkers(), // Function to create markers
@@ -53,59 +59,66 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Stack(
                 children: [
-                  SvgPicture.asset(MyImgs.homeContainer),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 40.h, left: 15.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CircleAvatar(
-                                  radius: 25.r,
-                                  backgroundImage: AssetImage(MyImgs.personProfile),
-                                ),
-                                SizedBox(
-                                  width: 10.w,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    TextStyleWidget(
-                                      title: 'Welcome',
-                                      size: 14.sp,
-                                      color: Colors.white,
-                                    ),
-                                    TextStyleWidget(
-                                      title: 'M.Musab',
-                                      size: 14.sp,
-                                      color: Colors.white,
-                                      weight: FontWeight.w600,
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            TextStyleWidget(
-                              title: 'Get Your \nSecure Park',
-                              size: 24.sp,
-                              weight: FontWeight.w600,
-                              color: Colors.white,
-                              height: 1.0,
-                            ),
-                          ],
-                        ),
+                  Container(
+                    width: double.infinity,
+                    height: 200.h,
+                    decoration: BoxDecoration(
+                      color: MyColors.primaryRed,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(20.r),
+                        bottomRight: Radius.circular(20.r),
                       ),
-                    ],
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 40.h, left: 15.w),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CircleAvatar(
+                                radius: 25.r,
+                                backgroundImage:
+                                    AssetImage(MyImgs.personProfile),
+                              ),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  TextStyleWidget(
+                                    title: 'Welcome',
+                                    size: 14.sp,
+                                    color: Colors.white,
+                                  ),
+                                  TextStyleWidget(
+                                    title: 'M.Musab',
+                                    size: 14.sp,
+                                    color: Colors.white,
+                                    weight: FontWeight.w600,
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          TextStyleWidget(
+                            title: 'Get Your \nSecure Park',
+                            size: 24.sp,
+                            weight: FontWeight.w600,
+                            color: Colors.white,
+                            height: 1.0,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   Positioned(
                     top: 60,
@@ -118,11 +131,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              Padding(
+              if(parkDetail) Padding(
                 padding: EdgeInsets.all(20.sp),
                 child: GestureDetector(
-                  onTap: (){
-                    Get.to(()=>const ParkDetailScreen());
+                  onTap: () {
+                    Get.to(() => const ParkDetailScreen());
                   },
                   child: Container(
                     padding: EdgeInsets.all(10.sp),
@@ -140,15 +153,25 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 103.h,
                             width: 103.w,
                             image: AssetImage(MyImgs.building)),
-                        SizedBox(width: 10.w,),
+                        SizedBox(
+                          width: 10.w,
+                        ),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 10.h),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              TextStyleWidget(title: 'Sheikh Yaseen Plaza', size: 12.sp, weight: FontWeight.w600,),
-                              TextStyleWidget(title: 'Peshawar', size: 10.sp, color: MyColors.grey,),
+                              TextStyleWidget(
+                                title: 'Sheikh Yaseen Plaza',
+                                size: 12.sp,
+                                weight: FontWeight.w600,
+                              ),
+                              TextStyleWidget(
+                                title: 'Peshawar',
+                                size: 10.sp,
+                                color: MyColors.grey,
+                              ),
                               Spacer(),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -156,21 +179,31 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Image(image: AssetImage(MyImgs.rs)),
-                                      SizedBox(width: 5.w,),
-                                      TextStyleWidget(title: '50/hr', size: 10.sp),
+                                      SizedBox(
+                                        width: 5.w,
+                                      ),
+                                      TextStyleWidget(
+                                          title: '50/hr', size: 10.sp),
                                     ],
                                   ),
-                                  SizedBox(width: 30.w,),
+                                  SizedBox(
+                                    width: 30.w,
+                                  ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       SvgPicture.asset(MyImgs.meter),
-                                      SizedBox(width: 5.w,),
-                                      TextStyleWidget(title: '100 m', size: 10.sp),
+                                      SizedBox(
+                                        width: 5.w,
+                                      ),
+                                      TextStyleWidget(
+                                          title: '100 m', size: 10.sp),
                                     ],
                                   ),
                                 ],
@@ -185,11 +218,45 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 180.h,
+              left: 30.w,
+              right: 30.w,
+            ),
+            child: TextFormField(
+              controller: TextEditingController(),
+              onTap: (){
+                setState(() {
+                  parkDetail = !parkDetail;
+                });
+              },
+              style: GoogleFonts.inter(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+              ),
+              validator: (value){},
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 0),
+                  hintText: 'Search...',
+                  hintStyle: GoogleFonts.inter(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.r),
+                    borderSide: BorderSide.none,
+                  )
+              ),
+            ),
+          )
         ],
       ),
     );
   }
-
 }
 
 // Padding(

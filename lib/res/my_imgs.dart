@@ -40,6 +40,8 @@ class MyImgs  {
   static String phone = 'assets/icons/home/phone.svg';
   static String chat = 'assets/icons/home/chat.svg';
   static String easypaisa = 'assets/icons/home/easypaisa.png';
+  static String jazzCash = 'assets/icons/home/jazzCash.png';
+  static String successPay = 'assets/icons/home/successPay.png';
 
   /// Assets Images
   static String personProfile = 'assets/images/profile.jpg';

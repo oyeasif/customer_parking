@@ -15,6 +15,9 @@ class BookParkingDetailsScreen extends StatefulWidget {
 }
 
 class _BookParkingDetailsScreenState extends State<BookParkingDetailsScreen> {
+
+  int sliderValue = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,8 +83,17 @@ class _BookParkingDetailsScreenState extends State<BookParkingDetailsScreen> {
                     Slider(
                       activeColor: MyColors.primaryRed,
                       thumbColor: Colors.white,
-                      value: 0.5,
-                      onChanged: (value) {},
+                      min: 1,
+                      max: 24,
+                      value: sliderValue.toDouble(),
+                      label: sliderValue.toStringAsFixed(1),
+                      divisions: 100,
+                      onChanged: (value){
+                        setState(() {
+                          sliderValue = value.toInt();
+                          print(value.toString());
+                        });
+                      },
                     ),
                     SizedBox(
                       height: 20.h,
@@ -156,7 +168,7 @@ class _BookParkingDetailsScreenState extends State<BookParkingDetailsScreen> {
                       height: 5.h,
                     ),
                     TextStyleWidget(
-                      title: 'Rs 200',
+                      title: '${sliderValue * 100}',
                       size: 14.sp,
                       weight: FontWeight.w600,
                       color: MyColors.primaryRed,

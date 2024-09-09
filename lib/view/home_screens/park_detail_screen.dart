@@ -44,11 +44,14 @@ class _ParkDetailScreenState extends State<ParkDetailScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const CircleAvatar(
+                              CircleAvatar(
                                 backgroundColor: Colors.white,
                                 child: Center(
-                                  child: Icon(
-                                    Icons.arrow_back_sharp,
+                                  child: IconButton(
+                                    onPressed: (){
+                                      Get.back();
+                                    },
+                                    icon: const Icon(Icons.arrow_back_sharp),
                                     color: Colors.black,
                                   ),
                                 ),
@@ -83,10 +86,17 @@ class _ParkDetailScreenState extends State<ParkDetailScreen> {
                         ),
                       ],
                     ),
-                    Padding(
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white60,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(40.r),
+                          topLeft: Radius.circular(40.r),
+                        )
+                      ),
                       padding: EdgeInsets.symmetric(
                         horizontal: 15.w,
-                        vertical: 15.h,
+                        vertical: 20.h,
                       ),
                       child: DefaultTabController(
                         length: 3,
@@ -168,7 +178,7 @@ class _ParkDetailScreenState extends State<ParkDetailScreen> {
                               ],
                             ),
                             SizedBox(
-                              height: 400.h,
+                              height: 450.h,
                               child: TabBarView(children: [
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -256,16 +266,14 @@ class _ParkDetailScreenState extends State<ParkDetailScreen> {
                                       physics: NeverScrollableScrollPhysics(),
                                       shrinkWrap: true,
                                       itemCount: 3,
+                                      padding: EdgeInsets.zero,
                                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
                                       itemBuilder: (context, index) {
                                         return Padding(
-                                          padding: EdgeInsets.all(5.0.sp),
+                                          padding: EdgeInsets.symmetric(horizontal: 5.0.sp),
                                           child: Container(
                                             height: 70.h,
                                             width: 70.w,
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(16.r),
-                                            ),
                                             child: Image(image: AssetImage(MyImgs.building)),
                                           ),
                                         );
@@ -288,30 +296,35 @@ class _ParkDetailScreenState extends State<ParkDetailScreen> {
                                             mainAxisAlignment: MainAxisAlignment.start,
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              TextStyleWidget(title: 'Muhammad Qayum', size: 12.sp),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  TextStyleWidget(title: 'Muhammad Qayum', size: 12.sp),
+                                                  const RatingStars(
+                                                    starCount: 5,
+                                                    starColor: MyColors.ratingColor,
+                                                    valueLabelVisibility: false,
+                                                    value: 5,
+                                                  ),
+                                                ],
+                                              ),
                                               SizedBox(height: 5.h,),
                                               TextStyleWidget(title: 'Specious Parking', size: 12.sp, weight: FontWeight.w600,),
                                               SizedBox(height: 5.h,),
-                                              TextStyleWidget(title: 'Helpful?    Yes(2)   |   No(0)', size: 12.sp, color: MyColors.grey,),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  TextStyleWidget(title: 'Helpful?    Yes(2)   |   No(0)', size: 12.sp, color: MyColors.grey,),
+                                                  TextStyleWidget(title: 'Nov 09, 2022', size: 12.sp, color: MyColors.grey,),
+
+                                                ],
+                                              ),
                                             ],
                                           ),
                                         ),
-                                        Column(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            const RatingStars(
-                                              starCount: 5,
-                                              starColor: MyColors.ratingColor,
-                                              valueLabelVisibility: false,
-                                              value: 5,
-                                            ),
-                                            TextStyleWidget(title: 'Nov 09, 2022', size: 12.sp, color: MyColors.grey,),
-                                          ],
-                                        ),
                                       ],
                                     ),
-                                    Divider(),
+                                    const Divider(),
                                   ],
                                 ),
                               ]),
@@ -326,80 +339,84 @@ class _ParkDetailScreenState extends State<ParkDetailScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(15.sp),
-            height: 70.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.r),
-                  topRight: Radius.circular(20.r),
-                )),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    TextStyleWidget(
-                      title: 'Total Price',
-                      size: 12.sp,
-                      weight: FontWeight.w500,
-                      color: MyColors.grey,
-                    ),
-                    Row(
-                      children: [
-                        TextStyleWidget(
-                          title: 'Rs 50',
-                          size: 14.sp,
-                          weight: FontWeight.w500,
-                          color: MyColors.primaryOrange,
-                        ),
-                        TextStyleWidget(
-                          title: '/hr',
-                          size: 12.sp,
-                          weight: FontWeight.w500,
-                          color: MyColors.grey,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: 160.w,
-                  height: 45.h,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 1.0.h), // Adjust padding as needed
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30.r),
+            height: 90.h,
+            color: Colors.white60,
+            child: Container(
+              padding: EdgeInsets.all(15.sp),
+              height: 90.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.r),
+                    topRight: Radius.circular(20.r),
+                  )),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      TextStyleWidget(
+                        title: 'Total Price',
+                        size: 12.sp,
+                        weight: FontWeight.w500,
+                        color: MyColors.grey,
                       ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: MyColors
-                              .primaryOrange, // Use 'primary' for button's color
-                          shadowColor: Colors.transparent,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.r),
+                      Row(
+                        children: [
+                          TextStyleWidget(
+                            title: 'Rs 50',
+                            size: 14.sp,
+                            weight: FontWeight.w500,
+                            color: MyColors.primaryOrange,
                           ),
+                          TextStyleWidget(
+                            title: '/hr',
+                            size: 12.sp,
+                            weight: FontWeight.w500,
+                            color: MyColors.grey,
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 160.w,
+                    height: 45.h,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 1.0.h), // Adjust padding as needed
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30.r),
                         ),
-                        onPressed: () {
-                          Get.to(()=>const VehicleDetailScreen());
-                        },
-                        child: TextStyleWidget(
-                          title: 'Pick Spot',
-                          size: 14.sp,
-                          color: Colors.white,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: MyColors
+                                .primaryOrange, // Use 'primary' for button's color
+                            shadowColor: Colors.transparent,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30.r),
+                            ),
+                          ),
+                          onPressed: () {
+                            Get.to(()=>const VehicleDetailScreen());
+                          },
+                          child: TextStyleWidget(
+                            title: 'Pick Spot',
+                            size: 14.sp,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

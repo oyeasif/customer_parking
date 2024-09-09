@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           ),
           fallbackLocale: Locale('en_US'),
           debugShowCheckedModeBanner: false,
-          title: 'App Spot',
+          title: 'Customer Parking',
           home: SplashScreen(),
         );
       },
