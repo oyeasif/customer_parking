@@ -42,6 +42,21 @@ class MyImgs  {
   static String easypaisa = 'assets/icons/home/easypaisa.png';
   static String jazzCash = 'assets/icons/home/jazzCash.png';
   static String successPay = 'assets/icons/home/successPay.png';
+  static String barCode = 'assets/icons/home/barCode.png';
+
+  ///Assets Icons Profile
+  static String editProfile = 'assets/icons/profile/editProfile.svg';
+  static String payment = 'assets/icons/profile/payment.svg';
+  static String help = 'assets/icons/profile/help.svg';
+  static String notifications = 'assets/icons/profile/notifications.svg';
+  static String darkMode = 'assets/icons/profile/darkMode.svg';
+  static String language = 'assets/icons/profile/language.svg';
+  static String logOut = 'assets/icons/profile/logOut.svg';
+  static String unitedKingdom = 'assets/icons/profile/un.png';
+  static String uk = 'assets/icons/profile/uk.svg';
+  static String pakistan = 'assets/icons/profile/pakistan.png';
+
+
 
   /// Assets Images
   static String personProfile = 'assets/images/profile.jpg';

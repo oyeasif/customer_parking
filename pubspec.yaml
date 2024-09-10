@@ -76,6 +76,7 @@ flutter:
     - assets/icons/onboard/
     - assets/icons/login/
     - assets/icons/home/
+    - assets/icons/profile/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

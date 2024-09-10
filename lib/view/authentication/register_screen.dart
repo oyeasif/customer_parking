@@ -21,7 +21,6 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-
   bool visiblePassword = false;
   bool checkBox = true;
 
@@ -104,9 +103,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Container(
               padding: EdgeInsets.only(left: 8.w, top: 2.h, bottom: 2.h),
               decoration: BoxDecoration(
-                color: MyColors.textField,
-                borderRadius: BorderRadius.circular(10.r)
-              ),
+                  color: MyColors.textField,
+                  borderRadius: BorderRadius.circular(10.r)),
               child: InternationalPhoneNumberInput(
                 textStyle: GoogleFonts.inter(
                   fontSize: 16.sp,
@@ -130,7 +128,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 inputDecoration: InputDecoration(
                   hintText: 'Enter Phone',
                   hintStyle: GoogleFonts.inter(
-                      fontWeight: FontWeight.w600, color: Colors.grey,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey,
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.r),
@@ -186,7 +186,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   hintText: 'Password',
                   hintStyle: GoogleFonts.inter(
-                      fontWeight: FontWeight.w600, color: Colors.grey
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey,
                   ),
                   filled: true,
                   fillColor: MyColors.textField,
@@ -229,7 +231,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               loading: false,
               title: 'Sign up',
               onPress: () {
-                Get.to(()=>const VerificationScreen());
+                Get.to(() => const VerificationScreen());
               },
               buttonColor: MyColors.primaryOrange,
               textColor: Colors.white,
@@ -241,7 +243,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SvgPicture.asset(MyImgs.line),
-                TextStyleWidget(title: 'Or sign up with', size: 14.sp, color: MyColors.grey,),
+                TextStyleWidget(
+                  title: 'Or sign up with',
+                  size: 14.sp,
+                  color: MyColors.grey,
+                ),
                 SvgPicture.asset(MyImgs.line),
               ],
             ),
@@ -273,11 +279,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     backgroundColor: MyColors.primaryRed,
                     child: Center(
                         child: SvgPicture.asset(
-                          MyImgs.google,
-                          width: 25,
-                          height: 25,
-                          color: Colors.white,
-                        ))),
+                      MyImgs.google,
+                      width: 25,
+                      height: 25,
+                      color: Colors.white,
+                    ))),
               ],
             ),
             SizedBox(
@@ -287,19 +293,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                TextStyleWidget(
-                    title: 'Already an account?', size: 14.sp),
+                TextStyleWidget(title: 'Already an account?', size: 14.sp),
                 TextButton(
-                    onPressed: () {
-                      Get.to(()=>const LoginScreen());
-                    },
-                    child: TextStyleWidget(
-                      title: 'Login in',
-                      size: 14.sp,
-                      color: MyColors.primaryOrange,
-                      weight: FontWeight.w600,
-                      underline: TextDecoration.underline,
-                    ),
+                  onPressed: () {
+                    Get.to(() => const LoginScreen());
+                  },
+                  child: TextStyleWidget(
+                    title: 'Login in',
+                    size: 14.sp,
+                    color: MyColors.primaryOrange,
+                    weight: FontWeight.w600,
+                    underline: TextDecoration.underline,
+                  ),
                 ),
               ],
             ),

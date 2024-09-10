@@ -20,7 +20,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   bool parkDetail = true;
   final homeController = Get.find<HomeController>();
 
@@ -131,91 +130,94 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              if(parkDetail) Padding(
-                padding: EdgeInsets.all(20.sp),
-                child: GestureDetector(
-                  onTap: () {
-                    Get.to(() => const ParkDetailScreen());
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(10.sp),
-                    height: 120.h,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image(
-                            height: 103.h,
-                            width: 103.w,
-                            image: AssetImage(MyImgs.building)),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 10.h),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              TextStyleWidget(
-                                title: 'Sheikh Yaseen Plaza',
-                                size: 12.sp,
-                                weight: FontWeight.w600,
-                              ),
-                              TextStyleWidget(
-                                title: 'Peshawar',
-                                size: 10.sp,
-                                color: MyColors.grey,
-                              ),
-                              Spacer(),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Image(image: AssetImage(MyImgs.rs)),
-                                      SizedBox(
-                                        width: 5.w,
-                                      ),
-                                      TextStyleWidget(
-                                          title: '50/hr', size: 10.sp),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    width: 30.w,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      SvgPicture.asset(MyImgs.meter),
-                                      SizedBox(
-                                        width: 5.w,
-                                      ),
-                                      TextStyleWidget(
-                                          title: '100 m', size: 10.sp),
-                                    ],
-                                  ),
-                                ],
-                              )
-                            ],
+              if (parkDetail)
+                Padding(
+                  padding: EdgeInsets.all(20.sp),
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(() => const ParkDetailScreen());
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(10.sp),
+                      height: 120.h,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20.r),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image(
+                              height: 103.h,
+                              width: 103.w,
+                              image: AssetImage(MyImgs.building)),
+                          SizedBox(
+                            width: 10.w,
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10.h),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                TextStyleWidget(
+                                  title: 'Sheikh Yaseen Plaza',
+                                  size: 12.sp,
+                                  weight: FontWeight.w600,
+                                ),
+                                TextStyleWidget(
+                                  title: 'Peshawar',
+                                  size: 10.sp,
+                                  color: MyColors.grey,
+                                ),
+                                Spacer(),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Image(image: AssetImage(MyImgs.rs)),
+                                        SizedBox(
+                                          width: 5.w,
+                                        ),
+                                        TextStyleWidget(
+                                            title: '50/hr', size: 10.sp),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 30.w,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        SvgPicture.asset(MyImgs.meter),
+                                        SizedBox(
+                                          width: 5.w,
+                                        ),
+                                        TextStyleWidget(
+                                            title: '100 m', size: 10.sp),
+                                      ],
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
             ],
           ),
           Padding(
@@ -226,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: TextFormField(
               controller: TextEditingController(),
-              onTap: (){
+              onTap: () {
                 setState(() {
                   parkDetail = !parkDetail;
                 });
@@ -235,22 +237,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
               ),
-              validator: (value){},
+              validator: (value) {},
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 0),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 15.w, vertical: 0),
                   hintText: 'Search...',
                   hintStyle: GoogleFonts.inter(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey
-                  ),
+                      color: Colors.grey),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.r),
                     borderSide: BorderSide.none,
-                  )
-              ),
+                  )),
             ),
           )
         ],

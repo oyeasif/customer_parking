@@ -1,5 +1,6 @@
 import 'package:customer_parking_app/res/color.dart';
 import 'package:customer_parking_app/res/my_imgs.dart';
+import 'package:customer_parking_app/view/home_screens/invoice_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -278,7 +279,7 @@ class _ReviewSummaryScreenState extends State<ReviewSummaryScreen> {
                                     loading: false,
                                     title: 'View Parking Ticket',
                                     onPress: () {
-                                      Get.to(()=>const ReviewSummaryScreen());
+                                      Get.to(()=>const InvoiceScreen());
                                     },
                                     buttonColor: MyColors.primaryOrange,
                                     textColor: Colors.white),

@@ -20,7 +20,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   bool obsecureText = true;
 
   @override
@@ -125,7 +124,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           hintText: 'Password',
                           hintStyle: GoogleFonts.inter(
-                              fontWeight: FontWeight.w600, color: Colors.grey),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey,
+                          ),
                           filled: true,
                           fillColor: MyColors.textField,
                           border: OutlineInputBorder(
@@ -154,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       loading: false,
                       title: 'Login',
                       onPress: () {
-                        Get.to(()=> NaviBarScreen(currentindex: 0));
+                        Get.to(() => NaviBarScreen(currentindex: 0));
                       },
                       buttonColor: MyColors.primaryOrange,
                       textColor: Colors.white,
@@ -205,7 +207,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             title: 'Don\'t have an account?', size: 14.sp),
                         TextButton(
                             onPressed: () {
-                              Get.to(()=>const RegisterScreen());
+                              Get.to(() => const RegisterScreen());
                             },
                             child: TextStyleWidget(
                               title: 'Create now',
