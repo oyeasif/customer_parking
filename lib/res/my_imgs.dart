@@ -13,6 +13,8 @@ class MyImgs  {
   static String mobile3 = 'assets/icons/onboard/mobile3.svg';
   static String carPerson = 'assets/icons/onboard/carperson.svg';
   static String car3 = 'assets/icons/onboard/car3.svg';
+  static String onboardMobile2 = 'assets/icons/onboard/onboardmobile2.svg';
+  static String onboardPerson2 = 'assets/icons/onboard/onboardperson2.svg';
 
   ///Assets Icons Login
 
@@ -22,6 +24,10 @@ class MyImgs  {
   static String google = 'assets/icons/login/google.svg';
   static String line = 'assets/icons/login/Line.svg';
   static String verification = 'assets/icons/login/verification.svg';
+  static String forgotMobile = 'assets/icons/login/forgotMobile.svg';
+  static String forgotPic = 'assets/icons/login/forgotPic.svg';
+  static String forgotChat = 'assets/icons/login/Chat.svg';
+  static String message = 'assets/icons/login/Message.svg';
 
   /// Assets Icons Home
   static String home = 'assets/icons/home/home.svg';
@@ -43,6 +49,8 @@ class MyImgs  {
   static String jazzCash = 'assets/icons/home/jazzCash.png';
   static String successPay = 'assets/icons/home/successPay.png';
   static String barCode = 'assets/icons/home/barCode.png';
+  static String spots = 'assets/icons/home/spots.svg';
+  static String arrived = 'assets/icons/home/arrived.png';
 
   ///Assets Icons Profile
   static String editProfile = 'assets/icons/profile/editProfile.svg';

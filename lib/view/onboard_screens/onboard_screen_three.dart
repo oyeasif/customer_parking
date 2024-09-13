@@ -47,15 +47,21 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    TextStyleWidget(title: Strings.receiveParking.tr, size: 25.sp, weight: FontWeight.w700, color: MyColors.black10,),
-
-                    TextStyleWidget(title: Strings.notification.tr, size: 25.sp, weight: FontWeight.w700, color: MyColors.primaryRed,),
+                    TextStyleWidget(title: Strings.guiding.tr, size: 20.sp, weight: FontWeight.w700),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        TextStyleWidget(title: Strings.to.tr, size: 20.sp, weight: FontWeight.w700),
+                        TextStyleWidget(title: Strings.sustainability.tr, size: 20.sp, weight: FontWeight.w700, color: MyColors.primaryRed,),
+                      ],
+                    ),
                   ],
                 ),
               ),
               FadeInUp(
                 duration: const Duration(seconds: 2),
-                child: TextStyleWidget(title: Strings.onboardTwoDes.tr,
+                child: TextStyleWidget(title: Strings.onboardThreeDes.tr,
                   size: 16.sp, weight: FontWeight.w400, color: MyColors.black, textAlign: TextAlign.center,),
               ),
 

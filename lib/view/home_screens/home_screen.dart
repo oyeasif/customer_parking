@@ -1,16 +1,19 @@
+import 'dart:async';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:customer_parking_app/controllers/home_controller.dart';
 import 'package:customer_parking_app/res/color.dart';
 import 'package:customer_parking_app/res/my_imgs.dart';
 import 'package:customer_parking_app/view/home_screens/park_detail_screen.dart';
 import 'package:customer_parking_app/widgets/text_widget.dart';
-import 'package:customer_parking_app/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../../widgets/button_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,8 +23,47 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   bool parkDetail = true;
   final homeController = Get.find<HomeController>();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(const Duration(seconds: 10), (){
+      showDialog(
+          context: context,
+          builder: (BuildContext context){
+            return Dialog(
+              insetPadding: EdgeInsets.symmetric(vertical: 150.h, horizontal: 40.w),
+
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 0.h),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image(image: AssetImage(MyImgs.arrived)),
+                    TextStyleWidget(title: 'You\'ve arrived', size: 22.sp, weight: FontWeight.w600, color: MyColors.primaryRed,),
+                    SizedBox(height: 10.h,),
+                    ButtonWidget(
+                        loading: false,
+                        title: 'Done',
+                        onPress: () {},
+                        buttonColor: MyColors.primaryOrange,
+                        textColor: Colors.white),
+                    SizedBox(height: 20.h,),
+                  ],
+                ),
+              ),
+            );
+          });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -185,15 +227,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       children: [
                                         Image(image: AssetImage(MyImgs.rs)),
                                         SizedBox(
-                                          width: 5.w,
+                                          width: 2.w,
                                         ),
                                         TextStyleWidget(
                                             title: '50/hr', size: 10.sp),
                                       ],
                                     ),
-                                    SizedBox(
-                                      width: 30.w,
-                                    ),
+                                    SizedBox(width: 10.w,),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -202,10 +242,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                       children: [
                                         SvgPicture.asset(MyImgs.meter),
                                         SizedBox(
-                                          width: 5.w,
+                                          width: 2.w,
                                         ),
                                         TextStyleWidget(
                                             title: '100 m', size: 10.sp),
+                                      ],
+                                    ),
+                                    SizedBox(width: 10.w,),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        SvgPicture.asset(MyImgs.spots),
+                                        SizedBox(
+                                          width: 2.w,
+                                        ),
+                                        TextStyleWidget(
+                                            title: '10', size: 10.sp),
                                       ],
                                     ),
                                   ],

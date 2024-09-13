@@ -1,5 +1,6 @@
 import 'package:customer_parking_app/res/my_imgs.dart';
 import 'package:customer_parking_app/view/authentication/login_screen.dart';
+import 'package:customer_parking_app/view/authentication/terms_and_conditions.dart';
 import 'package:customer_parking_app/view/authentication/verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -214,7 +215,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 TextStyleWidget(title: 'Agree with', size: 14.sp),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(()=>const TermsAndConditions());
+                    },
                     child: TextStyleWidget(
                       title: 'Terms \& Condition',
                       size: 14.sp,

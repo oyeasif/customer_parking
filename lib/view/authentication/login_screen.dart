@@ -1,5 +1,6 @@
 import 'package:customer_parking_app/res/color.dart';
 import 'package:customer_parking_app/res/my_imgs.dart';
+import 'package:customer_parking_app/view/authentication/forgot_password.dart';
 import 'package:customer_parking_app/view/authentication/register_screen.dart';
 import 'package:customer_parking_app/view/authentication/verification_screen.dart';
 import 'package:customer_parking_app/view/navi_bar.dart';
@@ -20,6 +21,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   bool obsecureText = true;
 
   @override
@@ -34,10 +36,9 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 10.h,
             ),
             TextStyleWidget(
-              title: 'PARKILY',
-              size: 28.sp,
+              title: 'WELCOME TO PARKELY',
+              size: 24.sp,
               weight: FontWeight.w700,
-              letterSpacing: 3,
               textAlign: TextAlign.center,
             ),
             SizedBox(
@@ -140,13 +141,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Align(
                       alignment: Alignment.bottomRight,
-                      child: TextStyleWidget(
-                        title: 'Forgot Password?',
-                        size: 13.sp,
-                        textAlign: TextAlign.right,
-                        underline: TextDecoration.underline,
-                        color: MyColors.primaryOrange,
-                        weight: FontWeight.w600,
+                      child: GestureDetector(
+                        onTap: (){
+                          Get.to(()=>const ForgotPassword());
+                        },
+                        child: TextStyleWidget(
+                          title: 'Forgot Password?',
+                          size: 13.sp,
+                          textAlign: TextAlign.right,
+                          underline: TextDecoration.underline,
+                          color: MyColors.primaryOrange,
+                          weight: FontWeight.w600,
+                        ),
                       ),
                     ),
                     SizedBox(

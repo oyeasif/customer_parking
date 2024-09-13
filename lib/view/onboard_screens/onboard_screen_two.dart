@@ -23,26 +23,31 @@ class _OnboardScreenTwoState extends State<OnboardScreenTwo> {
       children: [
         Expanded(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SvgPicture.asset(MyImgs.onboard2),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  FadeInLeft(
+                  duration: Duration(seconds: 2),
+                  child: SvgPicture.asset(MyImgs.onboardMobile2, width: 150.w, height: 300.h,)),
+                  Padding(
+                    padding: EdgeInsets.only(left: 150.w, top: 50.h),
+                    child: FadeInRight(
+                        duration: Duration(seconds: 2),
+                        child: SvgPicture.asset(MyImgs.onboardPerson2, width: 130.w, height: 210.h,)),
+                  ),
+                ],
+              ),
               FadeInUp(
                 duration: const Duration(seconds: 2),
-                child: Column(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        TextStyleWidget(title: Strings.reserve.tr, size: 25.sp, weight: FontWeight.w700, color: MyColors.black10,),
-                        TextStyleWidget(title: Strings.yourSpot.tr, size: 25.sp, weight: FontWeight.w700, color: MyColors.primaryRed,),
-                        TextStyleWidget(title: Strings.iin.tr, size: 25.sp, weight: FontWeight.w700, color: MyColors.black10,),
-                      ],
-                    ),
-                    TextStyleWidget(title: Strings.advance.tr, size: 25.sp, weight: FontWeight.w700, color: MyColors.black10,),
+                    TextStyleWidget(title: Strings.reserve.tr, size: 20.sp, weight: FontWeight.w700, color: MyColors.black10,),
+                    TextStyleWidget(title: Strings.booking.tr, size: 20.sp, weight: FontWeight.w700, color: MyColors.primaryRed,),
                   ],
                 ),
               ),
