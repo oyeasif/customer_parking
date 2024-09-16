@@ -146,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Get.to(()=>const ForgotPassword());
                         },
                         child: TextStyleWidget(
-                          title: 'Forgot Password?',
+                          title: 'Forget Password?',
                           size: 13.sp,
                           textAlign: TextAlign.right,
                           underline: TextDecoration.underline,

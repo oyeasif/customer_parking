@@ -84,23 +84,6 @@ class _ReviewSummaryScreenState extends State<ReviewSummaryScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TextStyleWidget(
-                                  title: 'Parking Spot',
-                                  size: 12.sp,
-                                  color: MyColors.grey,
-                                  weight: FontWeight.w600),
-                              TextStyleWidget(
-                                  title: '1st Floor (11) ',
-                                  size: 12.sp,
-                                  weight: FontWeight.w600),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              TextStyleWidget(
                                   title: 'Date',
                                   size: 12.sp,
                                   color: MyColors.grey,
@@ -291,7 +274,7 @@ class _ReviewSummaryScreenState extends State<ReviewSummaryScreen> {
                                       Get.back();
                                     },
                                     buttonColor: MyColors.redLight,
-                                    textColor: Colors.white),
+                                    textColor: MyColors.primaryRed),
 
                               ],
                             ),

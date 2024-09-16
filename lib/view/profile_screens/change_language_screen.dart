@@ -15,7 +15,7 @@ class ChangeLanguageScreen extends StatefulWidget {
 class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
 
   List<String> img = [MyImgs.pakistan, MyImgs.unitedKingdom];
-  List<String> countryName = ['Pakistan', 'United Kingdom'];
+  List<String> countryName = ['Urdu', 'UK English'];
   int currentIndex = 0;
 
   @override

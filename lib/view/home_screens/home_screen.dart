@@ -27,43 +27,43 @@ class _HomeScreenState extends State<HomeScreen> {
   bool parkDetail = true;
   final homeController = Get.find<HomeController>();
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Timer(const Duration(seconds: 10), (){
-      showDialog(
-          context: context,
-          builder: (BuildContext context){
-            return Dialog(
-              insetPadding: EdgeInsets.symmetric(vertical: 150.h, horizontal: 40.w),
-
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 0.h),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image(image: AssetImage(MyImgs.arrived)),
-                    TextStyleWidget(title: 'You\'ve arrived', size: 22.sp, weight: FontWeight.w600, color: MyColors.primaryRed,),
-                    SizedBox(height: 10.h,),
-                    ButtonWidget(
-                        loading: false,
-                        title: 'Done',
-                        onPress: () {},
-                        buttonColor: MyColors.primaryOrange,
-                        textColor: Colors.white),
-                    SizedBox(height: 20.h,),
-                  ],
-                ),
-              ),
-            );
-          });
-    });
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   Timer(const Duration(seconds: 10), (){
+  //     showDialog(
+  //         context: context,
+  //         builder: (BuildContext context){
+  //           return Dialog(
+  //             insetPadding: EdgeInsets.symmetric(vertical: 150.h, horizontal: 40.w),
+  //
+  //             shape: RoundedRectangleBorder(
+  //               borderRadius: BorderRadius.circular(20.r),
+  //             ),
+  //             child: Padding(
+  //               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 0.h),
+  //               child: Column(
+  //                 mainAxisAlignment: MainAxisAlignment.center,
+  //                 crossAxisAlignment: CrossAxisAlignment.center,
+  //                 children: [
+  //                   Image(image: AssetImage(MyImgs.arrived)),
+  //                   TextStyleWidget(title: 'You\'ve arrived', size: 22.sp, weight: FontWeight.w600, color: MyColors.primaryRed,),
+  //                   SizedBox(height: 10.h,),
+  //                   ButtonWidget(
+  //                       loading: false,
+  //                       title: 'Done',
+  //                       onPress: () {},
+  //                       buttonColor: MyColors.primaryOrange,
+  //                       textColor: Colors.white),
+  //                   SizedBox(height: 20.h,),
+  //                 ],
+  //               ),
+  //             ),
+  //           );
+  //         });
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -294,9 +294,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               validator: (value) {},
               decoration: InputDecoration(
+                suffixIcon: SizedBox( width: 16.w, height: 16.h,child: Center(child: SvgPicture.asset(MyImgs.search,))),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 15.w, vertical: 0),
-                  hintText: 'Search...',
+                  hintText: 'Search by name or city area',
                   hintStyle: GoogleFonts.inter(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,

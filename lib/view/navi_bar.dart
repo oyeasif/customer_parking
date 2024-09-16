@@ -1,4 +1,5 @@
 import 'package:customer_parking_app/res/my_imgs.dart';
+import 'package:customer_parking_app/view/bookings_screens/bookings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -10,7 +11,6 @@ import '../res/strings.dart';
 import 'favourites_screens/favourites_screen.dart';
 import 'home_screens/home_screen.dart';
 import 'profile_screens/profile_screen.dart';
-import 'track_screens/track_screen.dart';
 
 class NaviBarScreen extends StatefulWidget {
 
@@ -29,7 +29,7 @@ class _NaviBarScreenState extends State<NaviBarScreen> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const FavouritesScreen(),
-    const TrackScreen(),
+    const BookingsScreen(),
     const ProfileScreen(),
   ];
 
@@ -123,7 +123,7 @@ class _NaviBarScreenState extends State<NaviBarScreen> {
                     color: MyColors.grey20,
                   ),
                 ),
-                label: Strings.track.tr,
+                label: Strings.bookings.tr,
                 activeIcon: CustomShakeAnimation(
                   begin: '-5.0',
                   end: '5.0',

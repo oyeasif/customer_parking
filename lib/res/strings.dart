@@ -40,6 +40,7 @@ class  Strings extends Translations {
   static String onboardThreeDes = 'Your Companion Towards Sustainable Practices';
   static String favourites = 'Favourites';
   static String track = 'Track';
+  static String bookings = 'Bookings';
   static String profile = 'Profile';
   static String onSpot = 'On-Spot ';
   static String availability = 'Availability';

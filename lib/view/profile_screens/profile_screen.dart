@@ -1,6 +1,7 @@
 import 'package:customer_parking_app/res/color.dart';
 import 'package:customer_parking_app/view/authentication/login_screen.dart';
 import 'package:customer_parking_app/view/profile_screens/change_language_screen.dart';
+import 'package:customer_parking_app/view/profile_screens/refer_friend_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -110,14 +111,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     weight: FontWeight.w500,
                   ),
                 ),
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  leading: SvgPicture.asset(MyImgs.payment),
-                  title: TextStyleWidget(
-                    title: 'Payment',
-                    size: 14.sp,
-                    weight: FontWeight.w500,
-                  ),
+                SizedBox(
+                  height: 10.h,
                 ),
                 ListTile(
                   contentPadding: EdgeInsets.zero,
@@ -128,6 +123,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     weight: FontWeight.w500,
                   ),
                 ),
+                SizedBox(
+                  height: 10.h,
+                ),
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: SvgPicture.asset(MyImgs.notifications),
@@ -136,6 +134,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     size: 14.sp,
                     weight: FontWeight.w500,
                   ),
+                ),
+                SizedBox(
+                  height: 10.h,
                 ),
                 ListTile(
                   onTap: (){
@@ -158,6 +159,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     },
                   ),
                 ),
+                SizedBox(
+                  height: 10.h,
+                ),
                 ListTile(
                   onTap: (){
                     Get.to(()=> const ChangeLanguageScreen());
@@ -169,6 +173,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     size: 14.sp,
                     weight: FontWeight.w500,
                   ),
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                ListTile(
+                  onTap: (){
+                    Get.to(()=>const ReferFriendScreen());
+                  },
+                  contentPadding: EdgeInsets.zero,
+                  leading: SvgPicture.asset(MyImgs.refer),
+                  title: TextStyleWidget(
+                    title: 'Refer to a friend',
+                    size: 14.sp,
+                    weight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(
+                  height: 10.h,
                 ),
                 ListTile(
                   onTap: (){

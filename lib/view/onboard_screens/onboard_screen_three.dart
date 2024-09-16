@@ -62,7 +62,7 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
               FadeInUp(
                 duration: const Duration(seconds: 2),
                 child: TextStyleWidget(title: Strings.onboardThreeDes.tr,
-                  size: 16.sp, weight: FontWeight.w400, color: MyColors.black, textAlign: TextAlign.center,),
+                  size: 14.sp, weight: FontWeight.w400, color: MyColors.black, textAlign: TextAlign.center,),
               ),
 
             ],

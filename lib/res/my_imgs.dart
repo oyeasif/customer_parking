@@ -63,7 +63,13 @@ class MyImgs  {
   static String unitedKingdom = 'assets/icons/profile/un.png';
   static String uk = 'assets/icons/profile/uk.svg';
   static String pakistan = 'assets/icons/profile/pakistan.png';
+  static String refer = 'assets/icons/profile/refer.svg';
+  static String referFriendPic = 'assets/icons/profile/referFriendPic.svg';
+  static String copyRefer = 'assets/icons/profile/copyRefer.svg';
 
+  /// Assets Icons Bookings
+  static String totalSessions = 'assets/icons/bookings/totalSessions.svg';
+  static String totalSpend = 'assets/icons/bookings/totalSpend.svg';
 
 
   /// Assets Images

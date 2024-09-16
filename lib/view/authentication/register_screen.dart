@@ -127,7 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 inputBorder: const OutlineInputBorder(),
                 onSaved: (PhoneNumber number) {},
                 inputDecoration: InputDecoration(
-                  hintText: 'Enter Phone',
+                  hintText: '3001234567',
                   hintStyle: GoogleFonts.inter(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w500,
@@ -151,7 +151,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 8.0),
               child: TextStyleWidget(
-                title: 'Password',
+                title: 'Enter Password',
                 size: 14.sp,
                 weight: FontWeight.w500,
               ),

@@ -61,7 +61,7 @@ class _OnboardScreenOneState extends State<OnboardScreenOne> {
               FadeInUp(
                 duration: const Duration(seconds: 2),
                 child: TextStyleWidget(title: Strings.onboardOneDes.tr,
-                  size: 16.sp, weight: FontWeight.normal, color: MyColors.black, textAlign: TextAlign.center,),
+                  size: 14.sp, weight: FontWeight.normal, color: MyColors.black, textAlign: TextAlign.center,),
               ),
             ],
           ),

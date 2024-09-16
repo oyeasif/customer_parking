@@ -168,7 +168,7 @@ class _BookParkingDetailsScreenState extends State<BookParkingDetailsScreen> {
                       height: 5.h,
                     ),
                     TextStyleWidget(
-                      title: '${sliderValue * 100}',
+                      title: '${sliderValue * 50}',
                       size: 14.sp,
                       weight: FontWeight.w600,
                       color: MyColors.primaryRed,

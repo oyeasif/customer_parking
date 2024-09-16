@@ -110,20 +110,40 @@ class _ParkDetailScreenState extends State<ParkDetailScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
-                                      height: 23.h,
-                                      width: 84.w,
-                                      decoration: BoxDecoration(
-                                        color: MyColors.redLight,
-                                        borderRadius: BorderRadius.circular(5.r),
-                                      ),
-                                      child: Center(
-                                        child: TextStyleWidget(
-                                          title: 'Car Parking',
-                                          size: 10.sp,
-                                          color: MyColors.primaryOrange,
+                                    Row(
+                                      children: [
+                                        Container(
+                                          height: 23.h,
+                                          width: 84.w,
+                                          decoration: BoxDecoration(
+                                            color: MyColors.redLight,
+                                            borderRadius: BorderRadius.circular(5.r),
+                                          ),
+                                          child: Center(
+                                            child: TextStyleWidget(
+                                              title: 'Reservation',
+                                              size: 10.sp,
+                                              color: MyColors.primaryOrange,
+                                            ),
+                                          ),
                                         ),
-                                      ),
+                                        SizedBox(width: 5.w,),
+                                        Container(
+                                          height: 23.h,
+                                          width: 84.w,
+                                          decoration: BoxDecoration(
+                                            color: MyColors.redLight,
+                                            borderRadius: BorderRadius.circular(5.r),
+                                          ),
+                                          child: Center(
+                                            child: TextStyleWidget(
+                                              title: 'On-Spot',
+                                              size: 10.sp,
+                                              color: MyColors.primaryOrange,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
