@@ -1,6 +1,9 @@
 import 'package:customer_parking_app/res/color.dart';
 import 'package:customer_parking_app/view/authentication/login_screen.dart';
 import 'package:customer_parking_app/view/profile_screens/change_language_screen.dart';
+import 'package:customer_parking_app/view/profile_screens/edit_profile_screen.dart';
+import 'package:customer_parking_app/view/profile_screens/help_screen.dart';
+import 'package:customer_parking_app/view/profile_screens/notifications_screen.dart';
 import 'package:customer_parking_app/view/profile_screens/refer_friend_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -103,6 +106,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 10.h,
                 ),
                 ListTile(
+                  onTap: (){
+                    Get.to(()=>const EditProfileScreen());
+                  },
                   contentPadding: EdgeInsets.zero,
                   leading: SvgPicture.asset(MyImgs.editProfile),
                   title: TextStyleWidget(
@@ -115,6 +121,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 10.h,
                 ),
                 ListTile(
+                  onTap: (){
+                    Get.to(()=>const HelpScreen());
+                  },
                   contentPadding: EdgeInsets.zero,
                   leading: SvgPicture.asset(MyImgs.help),
                   title: TextStyleWidget(
@@ -127,6 +136,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 10.h,
                 ),
                 ListTile(
+                  onTap: (){
+                    Get.to(()=>const NotificationsScreen());
+                  },
                   contentPadding: EdgeInsets.zero,
                   leading: SvgPicture.asset(MyImgs.notifications),
                   title: TextStyleWidget(

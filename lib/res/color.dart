@@ -18,6 +18,7 @@ class MyColors {
   static const Color grey50 = Color(0xffEBEBEB);
   static const Color white10 = Color(0xffFEFEFE);
   static const Color ratingColor = Color(0xffFFB400);
+  static const Color green = Color(0xff00AF5B);
 
 
 }
